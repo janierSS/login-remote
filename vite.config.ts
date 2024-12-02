@@ -9,7 +9,8 @@ export default defineConfig({
     filename: 'remoteEntry.js',
     remotes: {},
     exposes: {
-      './Login': './src/components/Login'
+      './Login': './src/components/Login',
+      './loginApiSlice': './src/services/loginApiSlice'
     },
     shared: ['react', 'react-dom', 'react-redux', '@reduxjs/toolkit']
   })],

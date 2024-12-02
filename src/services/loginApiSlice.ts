@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { LoginFormValue, LoginResponse } from "../types/types";
 
-export const loginApiSlice = createApi({
+const loginApiSlice = createApi({
   reducerPath: "loginApi",
   baseQuery: fetchBaseQuery({
     credentials: "include",
@@ -18,3 +18,5 @@ export const loginApiSlice = createApi({
 });
 
 export const { useLoginMutation } = loginApiSlice;
+
+export default loginApiSlice
