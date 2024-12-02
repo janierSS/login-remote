@@ -9,7 +9,7 @@ export default defineConfig({
     filename: 'remoteEntry.js',
     remotes: {},
     exposes: {
-      // './NotesHome': './src/components/NotesHome'
+      './Login': './src/components/Login'
     },
     shared: ['react', 'react-dom', 'react-redux', '@reduxjs/toolkit']
   })],
