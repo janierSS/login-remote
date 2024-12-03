@@ -1,6 +1,8 @@
-import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { LoginFormValue } from '../types/types'
+import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { LoginFormValue } from "../types/types";
+import { useLoginMutation } from "myNotesHost/shared";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const {
@@ -9,9 +11,19 @@ const Login: React.FC = () => {
     formState: { errors },
   } = useForm<LoginFormValue>();
 
-  const onSubmit: SubmitHandler<LoginFormValue> = (data) => {
+  const navigate = useNavigate()
+
+  const [login] = useLoginMutation();
+
+  const onSubmit: SubmitHandler<LoginFormValue> = (creds) => {
     // Handle login logic here
-    console.log(data);
+    login(creds).then(resp => {
+        console.log('login resp: ', resp )
+        navigate(resp?.data?.userId ? '/home' : '/error')
+    }).catch(err => {
+        console.log('Error: ', err)
+        
+    })
   };
 
   return (
@@ -20,7 +32,7 @@ const Login: React.FC = () => {
         <label htmlFor="username">Username</label>
         <input
           id="username"
-          {...register('username', { required: 'Username is required' })}
+          {...register("username", { required: "Username is required" })}
           type="text"
         />
         {errors.username && <p>{errors.username.message}</p>}
@@ -30,7 +42,7 @@ const Login: React.FC = () => {
         <label htmlFor="password">Password</label>
         <input
           id="password"
-          {...register('password', { required: 'Password is required' })}
+          {...register("password", { required: "Password is required" })}
           type="password"
         />
         {errors.password && <p>{errors.password.message}</p>}
