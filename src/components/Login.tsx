@@ -19,7 +19,7 @@ const Login: React.FC = () => {
     // Handle login logic here
     login(creds).then(resp => {
         console.log('login resp: ', resp )
-        navigate(resp?.data?.userId ? '/home' : '/error')
+        navigate(resp?.data?.authReceipt ? '/home' : '/error')
     }).catch(err => {
         console.log('Error: ', err)
         

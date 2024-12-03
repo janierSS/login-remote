@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Login from "./components/Login"
 
-function App() {
+function AppDev() {
   return (
     <Router>
       <Routes>
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default AppDev
