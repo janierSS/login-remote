@@ -7,8 +7,8 @@ import "./mainDev.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <Provider store={appStore}> */}
+    <Provider store={appStore}>
       <AppDev />
-    {/* </Provider> */}
+    </Provider>
   </StrictMode>
 );
