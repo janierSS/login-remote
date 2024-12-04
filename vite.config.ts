@@ -12,7 +12,7 @@ export default defineConfig({
         myNotesHost: "http://localhost:3000/dist/assets/remoteEntry.js",
       },
       exposes: {
-        "./module": "./src/exposes",
+        "./Login": "./src/components/Login",
       },
       shared: ["react", "react-dom", 'react-router-dom', "react-redux", "@reduxjs/toolkit"],
     }),

@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LoginFormValue } from "../types/types";
-import { useLoginMutation } from "myNotesHost/shared";
+import useLoginMutation from "myNotesHost/useLoginMutation";
 import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {

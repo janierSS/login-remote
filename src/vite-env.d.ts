@@ -1,7 +1,5 @@
 /// <reference types="vite/client" />
 
-declare module 'myNotesHost/shared' {
-    const appStore: any;
-    const useLoginMutation: any
-    export {appStore, useLoginMutation};
-  }
+declare module 'myNotesHost/appStore'
+declare module 'myNotesHost/selectAuthReceipt'
+declare module 'myNotesHost/useLoginMutation'
